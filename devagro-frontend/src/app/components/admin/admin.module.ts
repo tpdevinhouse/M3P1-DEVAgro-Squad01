@@ -57,7 +57,7 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
     MatButtonModule,
     LayoutModule,
     FormsModule,
-    ScrollPanelModule
+    ScrollPanelModule,
 
   ]
 })
