@@ -19,7 +19,9 @@ describe('EmpresaCadastroComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('Testando função de validação de senha', () => {
+    const fixture = TestBed.createComponent(EmpresaCadastroComponent);
+    const app = fixture.componentInstance;
+    expect(app.validarSenha('senha123', 'senha123')).toEqual(null)
   });
 });
