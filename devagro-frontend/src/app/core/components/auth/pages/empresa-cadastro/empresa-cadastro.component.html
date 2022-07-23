@@ -15,7 +15,41 @@
         />
 
         <label>CNPJ</label>
-        <p-inputMask styleClass="prime-input" mask="99.999.999/9999-99" placeholder="CNPJ"></p-inputMask>
+        <p-inputMask
+          styleClass="prime-input"
+          id="cnpj"
+          mask="99.999.999/9999-99"
+          placeholder="CNPJ">
+        </p-inputMask>
+
+        <label>Endereço da Sede</label>
+        <input
+          type="text"
+          id="endereco"
+          placeholder="Endereço"
+        />
+
+        <label>E-mail</label>
+        <input
+          type="text"
+          id="email"
+          placeholder="E-mail"
+        />
+
+        <label>Senha</label>
+        <input
+          type="text"
+          id="senha"
+          placeholder="Senha"
+        />
+
+        <label>Digite Novamente a Senha</label>
+        <input
+          type="text"
+          id="re-senha"
+          placeholder="Senha"
+        />
+        <button routerLink="/">Log In</button>
       </form>
     </div>
   </div>
