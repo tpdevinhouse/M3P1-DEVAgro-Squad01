@@ -1,80 +1,72 @@
-body {
-    background-color: #375F24;
-    }
+@import "../../../../../../css/variaveis.css";
 
-.parent {
-     position: relative;
-    }
-
-.child {
-    width: 1000px;
-
-    position: absolute;
-    top: 12%;
-    left: 30%;
-
-    margin: -70px 0 0 -70px;
-    }
-
-.centralizar_logo{
-    text-align: center;
+.create-company {
+  background: var(--main-green-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h1{
-    color: var(--main-green-color);
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 600;
+.container-create-company {
+  background: var(--white);
+  min-width: 790px;
+  min-height: 800px;
+  text-align: center;
 }
 
-h2{
-    color: var(--main-green-color);
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 600;
+.company-content {
+  margin-top: 30px;
 }
 
-h5{
-    color: var(--main-green-color);
-    position: relative;
-    font-size: 1rem;
-    font-weight: 800;
-    left: 1%;
+.company-content .company-title {
+  color: var(--main-green-color);
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 25px;
 }
 
-input:invalid, textarea:invalid {
-    border-color: red;
+form {
+  padding: 30px;
 }
 
-input:valid, textarea:valid {
-    border-color: #375F24;
-}
-.quadro{
-    background-color: var(--white);
-    width:100%;
-    border-style: solid;
-    border-color: var(--white);
-    border-radius: 8px;
+form label {
+  color: var(--main-green-color);
+  display: flex;
+  text-transform: uppercase;
 }
 
-.entrada_texto{
-    border-color: var(--main-green-color);
-    border-radius: 5px;
-    width:97%;
-
-    position: relative;
-    left: 1%;
+form input,
+form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
+form input {
+  border: solid 1.5px var(--main-green-color);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 300;
+  height: 40px;
+  padding: 0 15px;
+}
 
-.centralizarbutton{
-    background-color: var(--main-green-color);
-    border-color: var(--main-green-color);
-    color: var(--white);
+form input:focus {
+  outline: 1px solid var(--main-green-color);
+}
 
-    border-radius: 5px;
-    width:97%;
+button {
+  border: none;
+  background: var(--main-green-color);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+}
 
-    position: relative;
-    left: 1%;
+button:hover {
+  background: var(--secondary-color);
 }
