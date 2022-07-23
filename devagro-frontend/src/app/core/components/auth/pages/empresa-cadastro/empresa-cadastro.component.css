@@ -37,13 +37,15 @@ form label {
 }
 
 form input,
-form button {
+form button,
+form p-inputMask /deep/ .prime-input {
   display: block;
   width: 100%;
   margin-bottom: 10px;
 }
 
-form input {
+form input,
+form p-inputMask /deep/ .prime-input {
   border: solid 1.5px var(--main-green-color);
   border-radius: 8px;
   font-size: 16px;
@@ -52,9 +54,12 @@ form input {
   padding: 0 15px;
 }
 
-form input:focus {
+form input:focus,
+form p-inputMask /deep/ .prime-input:focus {
   outline: 1px solid var(--main-green-color);
 }
+
+
 
 button {
   border: none;
@@ -70,3 +75,4 @@ button {
 button:hover {
   background: var(--secondary-color);
 }
+
