@@ -27,6 +27,8 @@ import { FuncionarioAlteraCadastroComponent } from './pages/funcionarios/funcion
 import { PropriedadesCadastradasComponent } from './pages/fazendas/propriedades-cadastradas/propriedades-cadastradas.component';
 import { ChartsComponent } from './pages/dashboard/charts/charts.component';
 
+// PrimeNG
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,8 @@ import { ChartsComponent } from './pages/dashboard/charts/charts.component';
     MatIconModule,
     MatButtonModule,
     LayoutModule,
-    FormsModule
+    FormsModule,
+    ScrollPanelModule
 
   ]
 })
