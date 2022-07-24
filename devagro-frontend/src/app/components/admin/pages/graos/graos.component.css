@@ -1,6 +1,7 @@
 .titulo {
   font-size: 24px;
   font-weight: bold;
+  text-align: center;
 }
 
 th {
@@ -84,7 +85,7 @@ td:nth-child(2) {
   font-size: 18px;
   font-weight: 400;
   cursor: pointer;
-  
+
 }
 
 .button:hover {
@@ -125,18 +126,19 @@ td:nth-child(2) {
 }
 
 .grao-botao {
-  flex: 1;
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: 0;
-  border-radius: 4px;
   display: flex;
   align-items: center;
+  position: relative;
+  background-color: var(--secondary-green-color);
+  color: var(--white);
   height: 2.8em;
+  cursor: pointer;
   width: 10em;
+  flex: 1;
+  left: 0;
+  margin: .5em;
+  padding: 0;
+  border-radius: 8px;
 }
 
 .graos button:hover {
@@ -183,7 +185,18 @@ td:nth-child(2) {
 .delete-grao {
   height: 2.8em;
   width: 6em;
+  justify-content: center;
+  align-items: center;
+  background: var(--red-soft);
 }
+
+.botao-salvar {
+  height: 3em;
+  width: 4em;
+  justify-content: center;
+  align-items: center;
+}
+
 .novo {
   position: absolute;
   right: 20vh;

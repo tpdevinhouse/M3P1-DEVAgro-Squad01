@@ -1,31 +1,55 @@
 <app-sidenav></app-sidenav>
 <app-template-body [title]="titulo">
-
-  <div class="fundo-tabela">
-    <h2 class="titulo" style="text-align: center">Lista de Grãos</h2>
-
+  <section class="fundo-tabela">
+    <h2 class="titulo">
+      Lista de Grãos
+    </h2>
     <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col">Nome do Grão</th>
-          <th scope="col">Fazenda</th>
-          <th scope="col">Colheita</th>
-          <th scope="col">Deletar</th>
+          <th scope="col">
+            Nome do Grão
+          </th>
+          <th scope="col">
+            Fazenda
+          </th>
+          <th scope="col">
+            Colheita
+          </th>
+          <th scope="col">
+            Deletar
+          </th>
         </tr>
       </thead>
-
       <tbody class="table-group-divider">
         <tr *ngFor="let grao of graosObjetos">
           <td>
-            <button class="grao-botao" [class.selected]="grao === selectedGrao" type="button" (click)="onSelect(grao)">
-              <span class="badge">{{grao.id}}</span>
-              <span class="name">{{grao.nome}}</span>
+            <button
+            class="grao-botao"
+            [class.selected]="grao === selectedGrao"
+            type="button"
+            (click)="onSelect(grao)"
+            >
+              <span class="badge">
+                {{ grao.id }} -
+              </span>
+              <span class="name">
+                {{ grao.nome }}
+              </span>
             </button>
           </td>
-          <td class="dado-grao">{{ grao.fazenda }}</td>
-          <td class="dado-grao">{{ grao.colheita }}</td>
+          <td class="dado-grao">
+            {{ grao.fazenda }}
+          </td>
+          <td class="dado-grao">
+            {{ grao.colheita }}
+          </td>
           <td>
-            <button class="delete-grao" (click)="SpecificDelete(grao)">Delete</button>
+            <button
+            class="grao-botao delete-grao"
+            (click)="SpecificDelete(grao)">
+              Delete
+            </button>
           </td>
         </tr>
       </tbody>
@@ -34,39 +58,75 @@
         </tr>
       </tfoot>
     </table>
-    
-  </div>
+  </section>
 
-  <div id="form-editar" *ngIf="selectedGrao && mostrar == true" class="fundo-tabela">
-    <h2>{{selectedGrao.nome | uppercase}}</h2>
-    
+  <section
+  id="form-editar"
+  *ngIf="selectedGrao && mostrar == true"
+  class="fundo-tabela"
+  >
+    <h2>
+      {{selectedGrao.nome | uppercase}}
+    </h2>
+
     <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Fazenda</th>
-          <th scope="col">Colheita</th>
-          <th scope="col">Salvar</th>
+          <th scope="col">
+            Id
+          </th>
+          <th scope="col">
+            Nome
+          </th>
+          <th scope="col">
+            Fazenda
+          </th>
+          <th scope="col">
+            Colheita
+          </th>
+          <th scope="col">
+            Salvar
+          </th>
         </tr>
       </thead>
 
-      <tbody class="table-group-divider">
+      <tbody
+      class="table-group-divider">
         <tr>
           <td>
-            <div>id: {{selectedGrao.id}}</div>
+            <div>
+              id: {{ selectedGrao.id }}
+            </div>
           </td>
           <td>
-            <input id="grao-name" [(ngModel)]="selectedGrao.nome" placeholder="name">
+            <input
+            id="grao-name"
+            [(ngModel)]="selectedGrao.nome"
+            placeholder="name"
+            >
           </td>
           <td>
-            <input id="grao-fazenda" [(ngModel)]="selectedGrao.fazenda" placeholder="fazenda">
+            <input
+            id="grao-fazenda"
+            [(ngModel)]="selectedGrao.fazenda"
+            placeholder="fazenda"
+            >
           </td>
           <td>
-            <input id="grao-colheita" type="date" [(ngModel)]="selectedGrao.colheita" placeholder="Data dd/mm/aaaa">
+            <input
+            id="grao-colheita"
+            type="date"
+            [(ngModel)]="selectedGrao.colheita"
+            placeholder="dd/mm/aaaa"
+            >
           </td>
           <td>
-            <button class="delete-grao" (click)="storeGrao()">Salvar</button>
+            <button
+            class="grao-botao botao-salvar"
+            (click)="storeGrao()"
+            >
+              Salvar
+            </button>
           </td>
         </tr>
       </tbody>
@@ -75,16 +135,18 @@
         </tr>
       </tfoot>
     </table>
-  </div>
+  </section>
   <div class="fundo-cadastrar">
     <div class="novo">
-  <button (click)="btnClick()" type="button" class="button">
-    <span class="button__text">+</span>
-  </button>  
-</div>
-<br><br><br>
-</div>
-  <!-- <button (click)="deleteGraos()" type="button" class="button-deletatudo">
-    <span class="button__text">Deletar Todos</span>
-  </button> -->
+      <button
+      (click)="btnClick()"
+      type="button"
+      class="button">
+        <span class="button__text">
+          +
+        </span>
+      </button>
+  </div>
+  <br><br><br>
+  </div>
 </app-template-body>
