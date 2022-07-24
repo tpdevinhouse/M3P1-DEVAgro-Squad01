@@ -81,7 +81,6 @@ export class FuncionarioCadastroComponent implements OnInit {
 
     localStorage.setItem("quantidade_funcionarios",String(id + 1))
 
-
   }
 
   pegar_funcionario(id:Number):any{
