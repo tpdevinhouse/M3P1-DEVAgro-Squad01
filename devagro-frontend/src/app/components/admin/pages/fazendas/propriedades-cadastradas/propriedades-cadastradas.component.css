@@ -16,7 +16,7 @@ th {
   font-weight: bold;
   text-align: left;
   padding-left: 40px;
-  color: #252733;
+  color: var(--black);
 }
 
 th:nth-child(2) {
@@ -24,7 +24,7 @@ th:nth-child(2) {
   font-weight: bold;
   text-align: right;
   padding-right: 40px;
-  color: #252733;
+  color: var(--black);
 }
 
 td {
@@ -32,7 +32,7 @@ td {
   font-weight: bold;
   text-align: left;
   padding-left: 40px;
-  color: #0e1d8e;
+  color: var(--blue);
 }
 
 td:nth-child(2) {
@@ -40,7 +40,7 @@ td:nth-child(2) {
   font-weight: bold;
   text-align: right;
   padding-right: 40px;
-  color: #0e1d8e;
+  color: var(--blue);
 }
 
 .fundo-tabela {
@@ -48,7 +48,7 @@ td:nth-child(2) {
   box-sizing: border-box;
   border-radius: 8px;
   border: 1px solid var(--main-green-color);
-  background: white;
+  background: var(--white);
 }
 
 p-scrollPanel /deep/ .table-scroll,
