@@ -1,39 +1,56 @@
 <app-sidenav></app-sidenav>
-<app-template-body>
-  <form>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Nome</label>
-      <input
-        class="form-control"
-        id="input-nome"
-        placeholder="Insira aqui o nome do funcionário que deseja alterar as informações"
-      />
-    </div>
+<app-template-body [title]="titulo">
+  <section class="change-employee">
+    <div class="container-change-employee">
+      <div class="change-employee-content">
+        <form>
+          <label>
+            Nome
+          </label>
+          <input
+            type="text"
+            id="nome"
+            placeholder="Nome do funcionário(a)"
+            required
+          />
+          <label>
+            Fazenda
+          </label>
+          <input
+            type="text"
+            id="fazenda"
+            placeholder="Nome da fazenda"
+            required
+          />
 
-    <div class="form-group">
-      <label for="exampleInputPassword1">Fazenda</label>
-      <input class="form-control" id="input-fazenda" placeholder="Fazenda" />
-    </div>
+          <label>
+            Função Principal
+          </label>
+          <input
+            type="text"
+            id="funcao"
+            placeholder="Função principal"
+          />
 
-    <div class="form-group">
-      <label for="exampleInputPassword1">Função principal</label>
-      <input
-        class="form-control"
-        id="input-funcaoPrincipal"
-        placeholder="Função Principal"
-      />
-    </div>
+          <label>
+            Ativo
+          </label>
+          <label class="switch">
+            <input type="checkbox"
+            required
+            >
+            <span class="slider round"></span>
+          </label>
 
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="check" />
-      <label class="form-check-label" for="exampleCheck1">ATIVO</label>
+          <button
+          (click)="alteraInfo()"
+          routerLink="/admin/funcionarios/"
+          >
+            Alterar informações
+          </button>
+        </form>
+      </div>
     </div>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="check-no" />
-      <label class="form-check-label" for="exampleCheck1">Não ATIVO</label>
-    </div>
-    <button (click)="alteraInfo()" routerLink="/admin/funcionarios/">
-      Alterar informações
-    </button>
-  </form>
+  </section>
 </app-template-body>
+

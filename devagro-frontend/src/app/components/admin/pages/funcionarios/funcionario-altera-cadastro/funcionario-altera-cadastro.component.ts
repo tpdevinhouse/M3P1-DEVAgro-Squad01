@@ -1,5 +1,4 @@
-import { JsonpClientBackend } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
@@ -8,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./funcionario-altera-cadastro.component.css']
 })
 export class FuncionarioAlteraCadastroComponent implements OnInit {
+
+  @Input() public titulo: string = 'Funcionários';
 
   constructor() { }
 
