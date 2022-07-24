@@ -48,7 +48,6 @@ export class FuncionarioAlteraCadastroComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.constroiLsitaObjeto()
   }
 
   listLocalStorage:Array<String> = Object(JSON.parse( String(localStorage.getItem("listaFuncionarios"))))
@@ -69,14 +68,14 @@ export class FuncionarioAlteraCadastroComponent implements OnInit {
     this.funcionarioInfo.nome =valorNome.value
     this.funcionarioInfo.fazenda=valorFazenda.value
     this.funcionarioInfo.funcaoPrincipal=valorFuncao.value
-    this.encontraFuncionairo(this.funcionarioInfo.nome,this.listaLocalStorageObject,this.funcionarioInfo.fazenda,this.funcionarioInfo.funcaoPrincipal)
+    this.encontraFuncionario(this.funcionarioInfo.nome,this.listaLocalStorageObject,this.funcionarioInfo.fazenda,this.funcionarioInfo.funcaoPrincipal)
     this.encontraEDeleta(this.funcionarioInfo.nome,this.listaLocalStorageObject)
     this.setaNovoObj(this.listaLocalStorageObject)
-    this.stringficaLsita(this.listaLocalStorageObject)
+    this.stringficaLista(this.listaLocalStorageObject)
     this.setaLocalStorage()
   }
 
-  encontraFuncionairo(nome:string,list:Array<Object>,fazenda:string,funcao:string){
+  encontraFuncionario(nome:string,list:Array<Object>,fazenda:string,funcao:string){
    // list.find(Element.arguments=="nome")
     list.forEach(elemental => {
       //this.constroiLsitaObjeto()
@@ -114,12 +113,13 @@ export class FuncionarioAlteraCadastroComponent implements OnInit {
   }
 
   encontraEDeleta(nome:string,list:Array<Object>){
-     list.forEach(elemental => {
-       Object.entries(elemental).forEach(element=>{
-         if(element[1]==nome){
-           list.splice(this.id,1)
-          }})});
-        }
+      list.forEach(elemental => {
+      Object.entries(elemental).forEach(element=>{
+      if(element[1]==nome){
+      list.splice(this.id,1)
+    }})});
+  }
+
   setaNovoObj(list:Array<Object>) {
     this.funcionario_atualizado.CPF=this.CPF
     this.funcionario_atualizado.ativo=this.ativo
@@ -131,12 +131,13 @@ export class FuncionarioAlteraCadastroComponent implements OnInit {
     list.splice(this.funcionario_atualizado.id,0,this.funcionario_atualizado)
   }
 
-  stringficaLsita(list:Array<Object>){
+  stringficaLista(list:Array<Object>){
       list.forEach(element => {
       var elementString = JSON.stringify(element)
       this.listaString.push(elementString)
    });
   }
+
   setaLocalStorage(){
     localStorage.setItem('listaFuncionarios',JSON.stringify(this.listaString))
   }
@@ -154,7 +155,9 @@ export class FuncionarioAlteraCadastroComponent implements OnInit {
     if(checkNo.checked==true){
       this.ativo=false;
       return false
-    }if(check.checked==true){return true}else{
+    }if(check.checked==true) {
+      return true
+    } else{
       return false
     }
   }
