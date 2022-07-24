@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-funcionario-cadastro',
@@ -7,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FuncionarioCadastroComponent implements OnInit {
 
+  @Input() public titulo: string = 'Funcionários';
+
   lista:Array<Object>=[]
-
-
 
   constructor() { }
 
   ngOnInit(): void {
     ///preenche a lista  com os objetos armazenado no localStorage sempre que a tela inicia
-    
+
     this.listaFuncionariosArmazenamento = JSON.parse(String(localStorage.getItem("listaFuncionarios"))) || []
     localStorage.setItem("listaFuncionarios",JSON.stringify(this.listaFuncionariosArmazenamento))//Array( JSON.parse(String(localStorage.getItem("listaFuncionarios"))))
     console.log(this.listaFuncionariosArmazenamento)
@@ -29,7 +29,7 @@ export class FuncionarioCadastroComponent implements OnInit {
   listaFuncionariosArmazenamento :Array<Object>=[] //|| JSON.parse(String(localStorage.getItem("listaFuncionarios")))
 
 
- 
+
   funcionario_info:any = {
     id: 0,
     nome: "",
@@ -89,7 +89,7 @@ export class FuncionarioCadastroComponent implements OnInit {
     console.log(funcionario_info_json)
     console.log(this.funcionario_info)
 
-    
+
 
 
   }

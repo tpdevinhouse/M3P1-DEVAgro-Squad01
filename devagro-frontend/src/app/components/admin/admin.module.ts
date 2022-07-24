@@ -29,6 +29,8 @@ import { ChartsComponent } from './pages/dashboard/charts/charts.component';
 
 // PrimeNG
 import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { InputMaskModule } from 'primeng/inputmask';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
     MatButtonModule,
     LayoutModule,
     FormsModule,
-    ScrollPanelModule
+    ScrollPanelModule,
+    InputMaskModule
 
   ]
 })

@@ -1,40 +1,82 @@
 <app-sidenav></app-sidenav>
-<app-template-body>
+<app-template-body [title]="titulo">
+  <section class="create-employee">
+    <div class="container-create-employee">
+      <div class="employee-content">
+        <form>
+          <label>
+            Nome
+          </label>
+          <input
+            type="text"
+            id="nome"
+            placeholder="Nome do funcionário(a)"
+            #NOME (keyup)=mudar_nome(NOME.value)
+            required
+          />
 
-  <h1>Funcionarios</h1>
+          <label>
+            Fazenda
+          </label>
+          <input
+            type="text"
+            id="fazenda"
+            placeholder="Nome da fazenda"
+            #FAZENDA  (keyup)=mudar_fazenda(FAZENDA.value)
+            required
+          />
 
-  <div class="quadro">
+          <label>
+            CPF
+          </label>
+          <p-inputMask
+            styleClass="prime-input"
+            id="cpf"
+            mask="999.999.999-99"
+            placeholder="CPF"
+            #CPF (keyup)=mudar_CPF(CPF.value)
+            >
+          </p-inputMask>
 
-    <p></p>
-    <h2 class="descricao">NOME</h2>
-    <input type="text" placeholder="Nome" class="entrada_texto" #NOME (keyup)=mudar_nome(NOME.value) required >
+          <label>
+            Telefone
+          </label>
+          <p-inputMask
+            styleClass="prime-input"
+            id="telefone"
+            mask="(99) 99999-9999"
+            placeholder="Telefone"
+            #TELEFONE (keyup)=mudar_telefone(TELEFONE.value)
+            >
+          </p-inputMask>
 
-    <p></p>
-    <h2 class="descricao">FAZENDA</h2>
-    <input type="text" placeholder="seleciona a fazenda" class="entrada_texto" #FAZENDA  (keyup)=mudar_fazenda(FAZENDA.value) required>
+          <label>
+            Função Principal
+          </label>
+          <input
+            type="text"
+            id="funcao"
+            placeholder="Função principal"
+            #FUNCAO_PRINCIPAL (keyup)=mudar_funcao_princila(FUNCAO_PRINCIPAL.value)
+          />
 
-    <p></p>
-    <h2 class="descricao">CPF</h2>
-    <input type="number" placeholder="CPF" class="entrada_texto" #CPF (keyup)=mudar_CPF(CPF.value) required>
-
-    <p></p>
-    <h2 class="descricao">TELEFONE</h2>
-    <input type="number" placeholder="Telefone" class="entrada_texto" #TELEFONE (keyup)=mudar_telefone(TELEFONE.value) required>
-
-    <p></p>
-    <h2 class="descricao">FUNÇÃO PRINCIPAL</h2>
-    <input type="Função principal"  placeholder="Função principal" class="entrada_texto" #FUNCAO_PRINCIPAL (keyup)=mudar_funcao_princila(FUNCAO_PRINCIPAL.value) required >
-
-    <p></p>
-    <h2 class="descricao">ATIVO</h2>
-    <label class="switch">
-      <input type="checkbox" #ATIVO (change)=mudar_ativo(ATIVO.checked) required>
-      <span class="slider round"></span>
-    </label>
-
-    <p></p>
-  </div>
-
-  <button (click)=apertar_cadastrar() routerLink="/admin/funcionarios/">cadastrar</button>
-
+          <label>
+            Ativo
+          </label>
+          <label class="switch">
+            <input type="checkbox"
+            #ATIVO (change)=mudar_ativo(ATIVO.checked)
+            required
+            >
+            <span class="slider round"></span>
+          </label>
+          <button (click)=apertar_cadastrar()
+          routerLink="/admin/funcionarios/"
+          >
+            Cadastrar
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 </app-template-body>
