@@ -1,69 +1,37 @@
-
-.borda{
-    background-color: #fff;
-    width:1100px;
-    border-style: solid;
-    border-color: var(--main-green-color);
-    border-radius: 10px;
-    border-width: 3px;
-    
+.conteiner{
+  border: 1px solid var(--main-green-color);
+  border-radius: 8px;
+  padding: 2rem 2rem;
+  background-color: var(--white);
 }
 
-.formulario{
-    position: relative;
-    left: 5%;
-    font-size: 100%;
-    margin-top: 1px;
+.form-control{
+  border: 1px solid var(--main-green-color);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  color: var(--main-green-color);
 }
 
-.input {
-    border-color: var(--main-green-color);
-    border-radius: 8px;
-    border-width: 3px;
-    position: relative;
-    left: 5vh;
-    Width: 1000px;
-    Height: 35px;
-    Top: 2px;
-  }
-    
+label {
+  text-transform: uppercase;
+}
+
 button{
-    background-color: var(--main-green-color);
-    border-color: var(--main-green-color);
-    color: var(--white);
-    border-radius: 8px;
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 6vh;
-    width: 40vh;
-    margin-block-end: 3vh;
+  font-size: 24px;
+  background: var(--main-green-color);
+  box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+  border-radius: 8px;
+  margin-top: 2rem;
+  height:5rem;
+  width:35em;
+  vertical-align: middle;
 }
 
-h2 {
-    margin: 2px;
+button:hover {
+  background-color: var(--secondary-green-color);
 }
 
-h3 {
-   margin-left: 8vh;
-
-}
-
-.cadastrar{    
-    background-color: var(--main-grey-color);
-    width:1100px;
- }
-
- input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-  }
-  
-input:invalid, textarea:invalid {
-    border-color: red;
-}
-
-input:valid, textarea:valid {
-    border-color: #375F24;
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }

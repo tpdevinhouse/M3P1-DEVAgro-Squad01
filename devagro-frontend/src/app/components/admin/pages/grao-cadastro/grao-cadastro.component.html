@@ -1,31 +1,63 @@
 <app-sidenav></app-sidenav>
-
 <app-template-body [title]="titulo">
-
-    <div class="borda">
-      <br>  
-      <h2 class="formulario">NOME</h2>
-      <input type="text" placeholder="  Nome" class="input" required minlength="2" #NOME (keyup)=mudar_nome(NOME.value)>>
-  
-      <br><br>
-      <h2 class="formulario">Fazenda que Produz</h2>
-      <input type="text" placeholder="  seleciona a fazenda" class="input" required #FAZENDA (keyup)=mudar_fazenda(FAZENDA.value)>>
-  
-      <br><br>
-      <h2 class="formulario">Previsão de Colheita</h2>
-      <input type="date" placeholder="Data dd/mm/aaaa" class="input" required #colheita (keyup)=mudar_colheita(colheita.value)>> 
-  
-     <br><br>
-      <h2 class="formulario">Informações adicionais</h2>
-      <input type="text" placeholder="  Informações adicionais" class="input" #informacoes (keyup)=mudar_informacoes(informacoes.value)>>
-      <br><br><br>
+  <form>
+    <div class="conteiner">
+      <div class="form-group">
+        <label for="nome">
+          NOME
+        </label>
+        <input
+        type="text"
+        class="form-control"
+        id="nome"
+        placeholder="Nome do Grão"
+        #NOME (keyup)=mudar_nome(NOME.value)
+        >
+      </div>
+      <div class="form-group">
+        <label>
+          Fazenda que Produz
+        </label>
+        <input
+        type="text"
+        class="form-control"
+        id="fazenda"
+        placeholder="Nome da Fazenda"
+        #FAZENDA (keyup)=mudar_fazenda(FAZENDA.value)>
+      </div>
+      <div class="form-group">
+        <label>
+          Previsão da Colheita
+        </label>
+        <input
+        type="date"
+        class="form-control"
+        id="previsao_colheita"
+        placeholder="dd/mm/aaaa"
+        #colheita (keyup)=mudar_colheita(colheita.value)
+        >
+      </div>
+      <div class="form-group">
+        <label>
+          Informações Adicionais
+        </label>
+        <input
+        type="text"
+        class="form-control"
+        id="info-adicionais"
+        placeholder="Informações Adicionais"
+        #informacoes (keyup)=mudar_informacoes(informacoes.value)
+        >
+      </div>
     </div>
-    
-    <div class="cadastrar">
-    <br>
- 
-    <button (click)=btnClick();click_cadastrar()>cadastrar</button>
-  
-  </div>
-
+    <div class="col text-center">
+      <button
+      type="button"
+      class="btn btn-success btn-lg btn-block mx-auto"
+      (click)=btnClick();click_cadastrar()
+      >
+        CADASTRAR
+      </button>
+    </div>
+  </form>
 </app-template-body>
