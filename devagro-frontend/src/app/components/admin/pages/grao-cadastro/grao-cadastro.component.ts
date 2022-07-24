@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 })
 
 
- 
+
 export class GraoCadastroComponent implements OnInit {
-  
+
 
    constructor(private router: Router) { }
 
@@ -21,12 +21,11 @@ export class GraoCadastroComponent implements OnInit {
   ngOnInit(): void {
     this.listaGraosArmazenamento = JSON.parse(String(localStorage.getItem("listaGraos"))) || []
     localStorage.setItem("listaGraos",JSON.stringify(this.listaGraosArmazenamento))
-     console.log(this.listaGraosArmazenamento)
   }
 
 
-  
-listaGraosArmazenamento :Array<Object>=[] 
+
+listaGraosArmazenamento :Array<Object>=[]
 
 
 //Grão Lista
@@ -54,17 +53,17 @@ mudar_informacoes(informacoes:string):void{
   this.grao_info.informacoes = informacoes
 }
 
-//Função cadastrar 
+//Função cadastrar
 
 click_cadastrar():void{
   let id = Number(localStorage.getItem("quantidade_grao")) + 1
-  
+
   if(id == null){
     this.grao_info.id = 0
   }
   else{
     this.grao_info.id = id
-  } 
+  }
 
 
   //Grão
@@ -75,7 +74,6 @@ click_cadastrar():void{
 
   //Referenciando o LocaStorage á lista
   localStorage.setItem("listaGraos",JSON.stringify(this.listaGraosArmazenamento))
-  console.log(this.listaGraosArmazenamento)
 
   ///Cria LocalStorage e o grão referenciados
   localStorage.setItem("grao_" + String(id),grao_info_json)
@@ -88,7 +86,7 @@ pegar_grao(id:Number):any{
 }
 
 btnClick = () => {
-  
+
   this.router.navigateByUrl('/admin/graos');
 };
 }

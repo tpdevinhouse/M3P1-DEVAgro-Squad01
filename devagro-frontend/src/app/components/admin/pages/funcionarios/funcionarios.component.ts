@@ -34,32 +34,20 @@ export class FuncionariosComponent implements OnInit {
 
   ngOnInit(): void {
     if (Object.keys(this.localStorageView).length != 0) {
-      this.localStorageViewObject.forEach((element) => {
-        console.log(element);
-      });
       this.localStorageView.forEach((element) => {
-        console.log(JSON.parse(String(element)));
         this.localStorageViewObject.push(JSON.parse(String(element)));
-        console.log(this.localStorageViewObject);
-        console.log(element);
-        //console.log(element.isPrototypeOf)
       });
       this.localStorageViewObject.forEach((elemental) => {
         Object.entries(elemental).forEach((element) => {});
-        console.log(Object.entries(elemental));
       });
-      console.log(this.localStorageView);
-      console.log(this.localStorageView);
 
       this.localStorageViewObject.forEach((elemental) => {
         Object.entries(elemental).forEach((element) => {});
-        console.log(Object.entries(elemental));
       });
       this.addFuncionarios();
       this.pegaFazenda();
       this.pegaFuncao();
       this.pegaAtividade();
-      //this.pegaFazenda()
     }
   }
 
@@ -67,17 +55,12 @@ export class FuncionariosComponent implements OnInit {
     this.localStorageViewObject.forEach(elemental => {
       Object.entries(elemental).forEach(element=>{
         if(element[0]=="nome"){
-          console.log(element[1])
           this.nome=element[1]
-          console.log(this.nome)
           this.listNome.push(this.nome)
-          console.log(this.listNome)
           return element[1].toString
         }
 
       })
-
-      console.log(Object.entries(elemental))
 
     });
     }
@@ -85,17 +68,12 @@ export class FuncionariosComponent implements OnInit {
       this.localStorageViewObject.forEach(elemental => {
         Object.entries(elemental).forEach(element=>{
           if(element[0]=="fazenda"){
-            console.log(element[1])
             this.fazenda=element[1]
-            console.log(this.fazenda)
             this.listFazenda.push(this.fazenda)
-            console.log(this.listFazenda)
             return element[1].toString
           }
 
         })
-
-        console.log(Object.entries(elemental))
 
       });
 
@@ -105,26 +83,16 @@ export class FuncionariosComponent implements OnInit {
       this.localStorageViewObject.forEach(elemental => {
         Object.entries(elemental).forEach(element=>{
           if(element[0]=="funcao_princila"){
-            console.log(element[1])
             this.funcao_principila=element[1]
-            console.log(this.funcao_principila)
             this.listFuncao.push(this.funcao_principila)
-            console.log(this.listFuncao)
             return element[1].toString
           }
 
         })
 
-        console.log(Object.entries(elemental))
-
       });
 
     }
-
-
-
-
-
 
   pegaTelefone(){}
   pegaFUncaoPrincipal(){}
@@ -132,35 +100,22 @@ export class FuncionariosComponent implements OnInit {
     this.localStorageViewObject.forEach(elemental => {
       Object.entries(elemental).forEach(element=>{
         if(element[0]=="ativo"){
-          console.log(element[1])
           this.ativo=element[1]
 
           if(this.ativo==""){this.ativo="não"}else{
             this.ativo="sim"
           }
-          console.log(this.ativo)
           this.listAtivo.push(this.ativo)
-          console.log(this.listAtivo)
           return element[1].toString
         }
 
       })
 
-      console.log(Object.entries(elemental))
 
     });
   }
 
-
-
-
   addFuncionarios(){
-
-
-
-
-
-   // product.preventDefault();
 
    //CRIA UM ELEMENTO TR E ATRIBUI UMA CLASSE A ELE
     const tr = document.createElement('tr')
@@ -210,36 +165,13 @@ export class FuncionariosComponent implements OnInit {
          divParagrafo.appendChild(p1)
          this.pegaNome()
          p1.classList.add("id:")
-         console.log(p1.className)
-         //p1.className=this.nome
-
-
          divParagrafo.appendChild(p2)
-
-
-
-        // p2.innerText="xxxxxxxxx"
-
-
-
-
-    //MANIPULA ELEMENTOS DENTRO DE "TD2"
-
-
-
   }
-
 
   constroiLsitaDeObj(){
     this.localStorageView.forEach(element => {
-      console.log( JSON.parse(String(element)))
       this.localStorageViewObject.push(JSON.parse(String(element)))
-      console.log(this.localStorageViewObject)
-       console.log(element)
-       console.log(element.isPrototypeOf)
-
      });
   }
-
 
 }

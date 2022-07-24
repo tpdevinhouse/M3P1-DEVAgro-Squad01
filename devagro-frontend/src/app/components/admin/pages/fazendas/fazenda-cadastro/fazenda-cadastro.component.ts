@@ -15,7 +15,6 @@ export class FazendaCadastroComponent implements OnInit {
   ngOnInit(): void {
     this.listaFazendasArmazenamento = JSON.parse(String(localStorage.getItem("listaFazendas"))) || []
     localStorage.setItem("listaFazendas",JSON.stringify(this.listaFazendasArmazenamento))
-    console.log(this.listaFazendasArmazenamento)
   }
 
   listaFazendasArmazenamento :Array<Object>=[]

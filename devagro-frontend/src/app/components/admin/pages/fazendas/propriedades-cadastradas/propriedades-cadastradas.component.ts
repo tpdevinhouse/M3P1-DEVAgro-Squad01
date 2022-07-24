@@ -19,22 +19,18 @@ export class PropriedadesCadastradasComponent implements OnInit {
 
   nomeCrescente(): void{
     sort(this.listaFazenda, 'nome', 'id', 'grao', 'ultima_colheita', 'localizacao')
-    console.log(this.listaFazenda)
   }
 
   nomeDecrescente(): void{
     sort(this.listaFazenda, '-nome', 'id', 'grao', 'ultima_colheita', 'localizacao')
-    console.log(this.listaFazenda)
   }
 
   colheitaCrescente(): void{
     sort(this.listaFazenda, 'ultima_colheita', 'id', 'nome', 'grao', 'localizacao')
-    console.log(this.listaFazenda)
   }
 
   colheitaDecrescente(): void{
     sort(this.listaFazenda, '-ultima_colheita', 'id',  'nome', 'grao', 'localizacao')
-    console.log(this.listaFazenda)
   }
 }
 

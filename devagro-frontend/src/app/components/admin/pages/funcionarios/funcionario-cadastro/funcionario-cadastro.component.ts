@@ -17,18 +17,14 @@ export class FuncionarioCadastroComponent implements OnInit {
     ///preenche a lista  com os objetos armazenado no localStorage sempre que a tela inicia
 
     this.listaFuncionariosArmazenamento = JSON.parse(String(localStorage.getItem("listaFuncionarios"))) || []
-    localStorage.setItem("listaFuncionarios",JSON.stringify(this.listaFuncionariosArmazenamento))//Array( JSON.parse(String(localStorage.getItem("listaFuncionarios"))))
-    console.log(this.listaFuncionariosArmazenamento)
+    localStorage.setItem("listaFuncionarios",JSON.stringify(this.listaFuncionariosArmazenamento))
 
   }
-
 
   onstructor() { }
     valor:any
 
-  listaFuncionariosArmazenamento :Array<Object>=[] //|| JSON.parse(String(localStorage.getItem("listaFuncionarios")))
-
-
+  listaFuncionariosArmazenamento :Array<Object>=[];
 
   funcionario_info:any = {
     id: 0,
@@ -79,17 +75,11 @@ export class FuncionarioCadastroComponent implements OnInit {
     this.listaFuncionariosArmazenamento.push(funcionario_info_json);
     //REFERENCIA O LOCAL STORAGE A LISTA
     localStorage.setItem("listaFuncionarios",JSON.stringify(this.listaFuncionariosArmazenamento))
-    console.log(this.listaFuncionariosArmazenamento)
 
     ///CRIA FUNCIONARIO E LOCALSTORAGE REFERENTE
     localStorage.setItem("funcionario_" + String(id),funcionario_info_json)
 
     localStorage.setItem("quantidade_funcionarios",String(id + 1))
-    ///EVENT EMITTER
-    console.log(funcionario_info_json)
-    console.log(this.funcionario_info)
-
-
 
 
   }
@@ -97,6 +87,5 @@ export class FuncionarioCadastroComponent implements OnInit {
   pegar_funcionario(id:Number):any{
     return JSON.parse(String(localStorage.getItem("funcionario_" + String(id))))
   }
-
 
 }
